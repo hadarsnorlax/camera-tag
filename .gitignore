@@ -162,7 +162,10 @@ cython_debug/
 #.idea/
 
 # Images
+
 images/profiles/*
 !images/profiles/.gitkeep
 images/tag_game/*
 !images/tag_game/.gitkeep
+face_recognition_encodings/*
+!face_recognition_encodings/.gitkeep
