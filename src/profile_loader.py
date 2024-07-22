@@ -4,16 +4,15 @@ import face_recognition
 
 import constants
 
-PROFILE_IMAGES_DIR = os.path.join(constants.PROJECT_ROOT, "images/profiles")
-
 def encode_faces():
     known_encodings = []
     known_names = []
 
     try:
-        for person_name in os.listdir(PROFILE_IMAGES_DIR):
+        for person_name in os.listdir(constants.PROFILE_IMAGES_DIR):
             if person_name != ".gitkeep":
-                person_dir = os.path.join(PROFILE_IMAGES_DIR, person_name)
+                person_dir = os.path.join(constants.PROFILE_IMAGES_DIR, person_name)
+                print(f"Reading profile of: {person_name}")
 
                 for image_name in os.listdir(person_dir):
                     image_path = os.path.join(person_dir, image_name)
@@ -23,7 +22,7 @@ def encode_faces():
                     if encodings:
                         known_encodings.append(encodings[0])
                         known_names.append(person_name)
-                        print(f"Reading profile of: {person_name}")
+                        print(f"Reading image: {image_name}")
 
         with open(constants.ENCODINGS_PATH, "wb") as f:
             pickle.dump((known_encodings, known_names), f)

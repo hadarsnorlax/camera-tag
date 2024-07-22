@@ -167,5 +167,5 @@ images/profiles/*
 !images/profiles/.gitkeep
 images/tag_game/*
 !images/tag_game/.gitkeep
-face_recognition_encodings/*
-!face_recognition_encodings/.gitkeep
+recognition_encodings/*
+!recognition_encodings/.gitkeep

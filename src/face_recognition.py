@@ -18,6 +18,8 @@ def recognize_face(new_image_path):
         if not new_encodings:
             print("No faces found in the image")
             return None
+        
+        face_locations = face_recognition.face_locations(new_image)
 
         for new_encoding in new_encodings:
             matches = face_recognition.compare_faces(known_encodings, new_encoding)
